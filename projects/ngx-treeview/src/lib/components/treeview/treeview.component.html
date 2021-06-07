@@ -14,7 +14,7 @@
       </svg>
     </i>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()"
+      <input type="checkbox" [ngClass]="(item.children)?'form-check-input parent':'form-check-input'" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()"
         [disabled]="item.disabled" [indeterminate]="item.indeterminate" />
       <label class="form-check-label" (click)="item.checked = !item.checked; onCheckedChange()">
         {{item.text}}
